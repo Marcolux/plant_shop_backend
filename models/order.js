@@ -11,11 +11,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.order.belongsTo(models.user)
-      models.order.belongsToMany(models.plant, {through: 'order_plants'})
+      models.user.hasMany(models.order)
     }
   };
   order.init({
+    userId: DataTypes.INTEGER,
     shipping_address: {
       type: DataTypes.STRING, allowNull: false,
       validate: {
@@ -34,7 +34,6 @@ module.exports = (sequelize, DataTypes) => {
       //   notNull: true
       // }
     },
-    userId: DataTypes.INTEGER,
     date: DataTypes.STRING
   }, {
     sequelize,

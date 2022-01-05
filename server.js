@@ -18,7 +18,8 @@ app.use('/plant', plantRoute)
 
 const orderRoute = require('./routes/orderRoute')
 app.use('/order', orderRoute)
-
-app.listen(3001, () => {
-    routesReport.print()
+const PORT = process.env.PORT || 3001
+app.listen(PORT, () => {
+    // routesReport.print()
+    console.log(`server listening on ${PORT}`)
   })

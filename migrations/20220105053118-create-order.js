@@ -8,6 +8,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      userId: {
+        type: Sequelize.INTEGER
+      },
       shipping_address: {
         type: Sequelize.STRING
       },
@@ -17,8 +20,8 @@ module.exports = {
       total_price: {
         type: Sequelize.INTEGER
       },
-      userId: {
-        type: Sequelize.INTEGER
+      date: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
